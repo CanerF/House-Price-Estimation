@@ -6,16 +6,16 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.neural_network import MLPClassifier
 
-# Kullanılan Veri Setlerinin İçe Aktarılması
+# Data import
 
 df_test = pd.read_csv("C:/Users/Caner Filiz/Desktop/house-prices-advanced-regression-techniques/test.csv")
 df_train = pd.read_csv("C:/Users/Caner Filiz/Desktop/house-prices-advanced-regression-techniques/train.csv")
 
-# Verinin Özeti
+# Summary of data
 #pd.set_option('display.max_columns', None)
 df_describe = df_train.describe().transpose()
 
-# Eksik Verilerin Tespit Edilmesi
+# Detecting missing values
 index = -1
 list_features = []
 list_missing_index = []
@@ -40,7 +40,7 @@ df_train.fillna(df_train.mean(), inplace=True)
 df_test.fillna(df_test.mean(), inplace=True)
 
 
-# Verinin Eğitilmesi
+# Training data set
 x_independent = df_train.drop("SalePrice", axis= 1)
 y_dependent = df_train['SalePrice']
 x_test = df_test
