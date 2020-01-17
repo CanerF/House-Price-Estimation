@@ -1,4 +1,4 @@
-# Kullanılacak Kütüphanelerin İçe Aktarılması
+# The libraries that will be used
 
 import pandas as pd
 import numpy as np
@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.neural_network import MLPClassifier
 
-# Data import
+# Importing data
 
 df_test = pd.read_csv("C:/Users/Caner Filiz/Desktop/house-prices-advanced-regression-techniques/test.csv")
 df_train = pd.read_csv("C:/Users/Caner Filiz/Desktop/house-prices-advanced-regression-techniques/train.csv")
@@ -56,6 +56,7 @@ f,ax = plt.subplots(figsize=(18, 18))
 sns.heatmap(df_train.corr(), annot=True, linewidths=.5, fmt= '.1f',ax=ax)
 plt.show()
 
+#Optional correlation detection lines
 #corr_values = df_train.corr().abs()
 #print(corr_values.iloc[-1].sort_values())
 
